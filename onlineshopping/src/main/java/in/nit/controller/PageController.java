@@ -9,7 +9,22 @@ public class PageController {
 
 	@RequestMapping(value= {"/","home","index"})
 	public String showPage(Model model) {
-		model.addAttribute("greeting", "Welcome To E-Commerce Site");
+		model.addAttribute("title", "Home");
+		model.addAttribute("userClickHome", true);
+		return "page";
+	}
+	
+	@RequestMapping(value= "/about")
+	public String aboutPage(Model model) {
+		model.addAttribute("title", "About Us");
+		model.addAttribute("userClickAbout", true);
+		return "page";
+	}
+	
+	@RequestMapping(value= "/contact")
+	public String contactPage(Model model) {
+		model.addAttribute("title", "Contact Us");
+		model.addAttribute("userClickContact", true);
 		return "page";
 	}
 }
